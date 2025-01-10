@@ -5,16 +5,9 @@ class GenericVector
 {
   public:
     /// @brief The x component of the vector.
-    TNumeric X;
+    TNumeric x;
     /// @brief The y component of the vector.
-    TNumeric Y;
-
-    static inline GenericVector<TNumeric> Zero;
-    static inline GenericVector<TNumeric> Up;
-    static inline GenericVector<TNumeric> Left;
-    static inline GenericVector<TNumeric> Down;
-    static inline GenericVector<TNumeric> Right;
-    static inline GenericVector<TNumeric> One;
+    TNumeric y;
 
     TNumeric& operator[](int index) const;
     GenericVector<TNumeric> operator+(GenericVector<TNumeric> other) const;
@@ -27,3 +20,8 @@ class GenericVector
     double Length() const;
     GenericVector<double> Normalise() const;
 };
+
+#include "Conversions.hpp"
+#include "Operators.hpp"
+#include "ReadyVectors.hpp"
+#include "Utility.hpp"
