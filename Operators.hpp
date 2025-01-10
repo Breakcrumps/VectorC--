@@ -31,7 +31,7 @@ TNumeric& GenericVector<TNumeric>::operator[](int index) const
 /// @param other 
 /// @return A TNumeric vector with each component - the sum of corresponding input vector components.
 template <typename TNumeric>
-GenericVector<TNumeric> GenericVector<TNumeric>::operator+(GenericVector<TNumeric> other) const
+GenericVector<TNumeric> GenericVector<TNumeric>::operator+(GenericVector<TNumeric> const (&other)) const
 {
   return { x + other.x, y + other.y };
 }
@@ -41,7 +41,7 @@ GenericVector<TNumeric> GenericVector<TNumeric>::operator+(GenericVector<TNumeri
 /// @param other 
 /// @return A TNumeric vector with each component - the difference of corresponding input vector components.
 template <typename TNumeric>
-GenericVector<TNumeric> GenericVector<TNumeric>::operator-(GenericVector<TNumeric> other) const
+GenericVector<TNumeric> GenericVector<TNumeric>::operator-(GenericVector<TNumeric> const (&other)) const
 {
   return { x - other.x, y - other.y };
 }
@@ -51,7 +51,7 @@ GenericVector<TNumeric> GenericVector<TNumeric>::operator-(GenericVector<TNumeri
 /// @param other 
 /// @return The TNumeric sum of corresponding components' products.
 template <typename TNumeric>
-TNumeric GenericVector<TNumeric>::operator*(GenericVector<TNumeric> other) const
+TNumeric GenericVector<TNumeric>::operator*(GenericVector<TNumeric> const (&other)) const
 {
   return (x * other.x) + (y * other.y);
 }
@@ -64,4 +64,10 @@ template <typename TNumeric>
 TNumeric GenericVector<TNumeric>::operator*(TNumeric other) const
 {
   return { x * other, y * other };
+}
+
+template <typename TNumeric>
+bool GenericVector<TNumeric>::operator==(GenericVector<TNumeric> const (&other))
+{
+  return (x == other.x) and (y == other.y);
 }

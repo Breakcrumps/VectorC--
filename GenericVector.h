@@ -10,15 +10,18 @@ class GenericVector
     TNumeric y;
 
     TNumeric& operator[](int index) const;
-    GenericVector<TNumeric> operator+(GenericVector<TNumeric> other) const;
-    GenericVector<TNumeric> operator-(GenericVector<TNumeric> other) const;
-    TNumeric operator*(GenericVector<TNumeric> other) const;
+    GenericVector<TNumeric> operator+(GenericVector<TNumeric> const (&other)) const;
+    GenericVector<TNumeric> operator-(GenericVector<TNumeric> const (&other)) const;
+    TNumeric operator*(GenericVector<TNumeric> const (&other)) const;
     TNumeric operator*(TNumeric other) const;
     operator GenericVector<int>() const;
+    operator GenericVector<double>() const;
+    operator GenericVector<float>() const;
     operator bool() const;
+    bool operator==(GenericVector<TNumeric> const (&other));
 
     double Length() const;
-    GenericVector<double> Normalise() const;
+    GenericVector<double> Normalised() const;
 };
 
 #include "Conversions.hpp"

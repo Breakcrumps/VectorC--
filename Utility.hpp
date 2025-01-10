@@ -16,10 +16,10 @@ double GenericVector<TNumeric>::Length() const
 /// @tparam TNumeric 
 /// @return A copy of the vector with its components in range (0, 1).
 template <typename TNumeric>
-GenericVector<double> GenericVector<TNumeric>::Normalise() const
+GenericVector<double> GenericVector<TNumeric>::Normalised() const
 {
-  double x = x / Length();
-  double y = y / Length();
+  double x = static_cast<double>(x) / Length();
+  double y = static_cast<double>(y) / Length();
 
   return { x, y };
 }
