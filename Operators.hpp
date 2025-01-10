@@ -66,8 +66,22 @@ TNumeric GenericVector<TNumeric>::operator*(TNumeric other) const
   return { x * other, y * other };
 }
 
+/// @brief Check if vectors are equal.
+/// @tparam TNumeric 
+/// @param other 
+/// @return True if the vectors are equal, false otherwise.
 template <typename TNumeric>
 bool GenericVector<TNumeric>::operator==(GenericVector<TNumeric> const (&other))
 {
   return (x == other.x) and (y == other.y);
+}
+
+/// @brief Get the length of the cross product vector of two vectors.
+/// @tparam TNumeric 
+/// @param other 
+/// @return The TNumeric length of the vector product of vectors.
+template <typename TNumeric>
+TNumeric GenericVector<TNumeric>::operator^(GenericVector<TNumeric> const (&other)) const
+{
+  return (x * other.y) - (other.x * y);
 }

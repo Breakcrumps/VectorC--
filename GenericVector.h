@@ -1,5 +1,7 @@
 #pragma once
 
+/// @brief A two-dimensional vector structure containing two numbers for generalised TNumeric numeric type.
+/// @tparam TNumeric 
 template <typename TNumeric>
 class GenericVector
 {
@@ -14,6 +16,7 @@ class GenericVector
     GenericVector<TNumeric> operator-(GenericVector<TNumeric> const (&other)) const;
     TNumeric operator*(GenericVector<TNumeric> const (&other)) const;
     TNumeric operator*(TNumeric other) const;
+    TNumeric operator^(GenericVector<TNumeric> const (&other)) const;
     operator GenericVector<int>() const;
     operator GenericVector<double>() const;
     operator GenericVector<float>() const;
