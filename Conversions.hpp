@@ -2,28 +2,28 @@
 
 #include "GenericVector.h"
 
-/// @brief Cast vector's generic components to int.
+/// @brief Cast the generic components of the vector to int.
 /// @tparam TNumeric 
 template <typename TNumeric>
 GenericVector<TNumeric>::operator GenericVector<int>() const
 {
-  return { static_cast<int>(x), static_cast<int>(y) };
+  return { static_cast<int>(X), static_cast<int>(Y) };
 }
 
-/// @brief Cast vector's generic components to int.
+/// @brief Cast the generic components of the vector to int.
 /// @tparam TNumeric 
 template <typename TNumeric>
 GenericVector<TNumeric>::operator GenericVector<double>() const
 {
-  return { static_cast<double>(x), static_cast<double>(y) };
+  return { static_cast<double>(X), static_cast<double>(Y) };
 }
 
-/// @brief Cast vector's generic components to int.
+/// @brief Cast the generic components of the vector to int.
 /// @tparam TNumeric 
 template <typename TNumeric>
 GenericVector<TNumeric>::operator GenericVector<float>() const
 {
-  return { static_cast<float>(x), static_cast<float>(y) };
+  return { static_cast<float>(X), static_cast<float>(Y) };
 }
 
 

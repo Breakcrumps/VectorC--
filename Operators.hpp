@@ -15,9 +15,9 @@ TNumeric& GenericVector<TNumeric>::operator[](int index) const
   switch (index)
   {
     case 0:
-      return x;
+      return X;
     case 1:
-      return y;
+      return Y;
     default:
       throw invalid_argument(
         "GenericVector is a two-dimensional structure."
@@ -33,7 +33,7 @@ TNumeric& GenericVector<TNumeric>::operator[](int index) const
 template <typename TNumeric>
 GenericVector<TNumeric> GenericVector<TNumeric>::operator+(GenericVector<TNumeric> const (&other)) const
 {
-  return { x + other.x, y + other.y };
+  return { X + other.X, Y + other.Y };
 }
 
 /// @brief Generate the difference of two vector terms.
@@ -43,7 +43,7 @@ GenericVector<TNumeric> GenericVector<TNumeric>::operator+(GenericVector<TNumeri
 template <typename TNumeric>
 GenericVector<TNumeric> GenericVector<TNumeric>::operator-(GenericVector<TNumeric> const (&other)) const
 {
-  return { x - other.x, y - other.y };
+  return { X - other.X, Y - other.Y };
 }
 
 /// @brief Generate the dot product of two vector terms.
@@ -53,7 +53,7 @@ GenericVector<TNumeric> GenericVector<TNumeric>::operator-(GenericVector<TNumeri
 template <typename TNumeric>
 TNumeric GenericVector<TNumeric>::operator*(GenericVector<TNumeric> const (&other)) const
 {
-  return (x * other.x) + (y * other.y);
+  return (X * other.X) + (Y * other.Y);
 }
 
 /// @brief Generate the scalar product of a scalar and vector terms.
@@ -63,7 +63,7 @@ TNumeric GenericVector<TNumeric>::operator*(GenericVector<TNumeric> const (&othe
 template <typename TNumeric>
 TNumeric GenericVector<TNumeric>::operator*(TNumeric other) const
 {
-  return { x * other, y * other };
+  return { X * other, Y * other };
 }
 
 /// @brief Check if vectors are equal.
@@ -73,7 +73,7 @@ TNumeric GenericVector<TNumeric>::operator*(TNumeric other) const
 template <typename TNumeric>
 bool GenericVector<TNumeric>::operator==(GenericVector<TNumeric> const (&other))
 {
-  return (x == other.x) and (y == other.y);
+  return (X == other.X) and (Y == other.Y);
 }
 
 /// @brief Get the length of the cross product vector of two vectors.
@@ -83,5 +83,5 @@ bool GenericVector<TNumeric>::operator==(GenericVector<TNumeric> const (&other))
 template <typename TNumeric>
 TNumeric GenericVector<TNumeric>::operator^(GenericVector<TNumeric> const (&other)) const
 {
-  return (x * other.y) - (other.x * y);
+  return (X * other.Y) - (other.X * Y);
 }

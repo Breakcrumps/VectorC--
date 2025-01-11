@@ -7,9 +7,9 @@ class GenericVector
 {
   public:
     /// @brief The x component of the vector.
-    TNumeric x;
+    TNumeric X;
     /// @brief The y component of the vector.
-    TNumeric y;
+    TNumeric Y;
 
     TNumeric& operator[](int index) const;
     GenericVector<TNumeric> operator+(GenericVector<TNumeric> const (&other)) const;
@@ -25,6 +25,7 @@ class GenericVector
 
     double Length() const;
     GenericVector<double> Normalised() const;
+    void Normalise();
 };
 
 #include "Conversions.hpp"
