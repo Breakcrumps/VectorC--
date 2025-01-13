@@ -1,11 +1,11 @@
 #pragma once
 
-#include "GenericVector.h"
+#include "Vector2.h"
 
 /// @brief Cast the generic components of the vector to int.
 /// @tparam TNumeric 
 template <typename TNumeric>
-GenericVector<TNumeric>::operator GenericVector<int>() const
+Vector2<TNumeric>::operator Vector2<int>() const
 {
   return { static_cast<int>(X), static_cast<int>(Y) };
 }
@@ -13,7 +13,7 @@ GenericVector<TNumeric>::operator GenericVector<int>() const
 /// @brief Cast the generic components of the vector to int.
 /// @tparam TNumeric 
 template <typename TNumeric>
-GenericVector<TNumeric>::operator GenericVector<double>() const
+Vector2<TNumeric>::operator Vector2<double>() const
 {
   return { static_cast<double>(X), static_cast<double>(Y) };
 }
@@ -21,7 +21,7 @@ GenericVector<TNumeric>::operator GenericVector<double>() const
 /// @brief Cast the generic components of the vector to int.
 /// @tparam TNumeric 
 template <typename TNumeric>
-GenericVector<TNumeric>::operator GenericVector<float>() const
+Vector2<TNumeric>::operator Vector2<float>() const
 {
   return { static_cast<float>(X), static_cast<float>(Y) };
 }
@@ -30,7 +30,7 @@ GenericVector<TNumeric>::operator GenericVector<float>() const
 /// @brief Check if the vector has a non-zero length.
 /// @tparam TNumeric 
 template <typename TNumeric>
-GenericVector<TNumeric>::operator bool() const
+Vector2<TNumeric>::operator bool() const
 {
   return Length();
 }
